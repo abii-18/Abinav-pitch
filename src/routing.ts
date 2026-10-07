@@ -19,3 +19,13 @@ export function getRoute(pathname: string, baseUrl: string): string | null {
 export function pitchHref(company: string, baseUrl: string) {
   return `${baseUrl.replace(/\/$/, '')}/${routeHash(company)}`
 }
+
+// Directory builds accept their root; single-company previews also accept
+// the selected company's existing opaque route, never a different pitch.
+export function acceptsPitchPath(pathname: string, baseUrl: string, company: string) {
+  const route = getRoute(pathname, baseUrl)
+  if (route === '') return true
+  const hash = routeHash(company)
+  const directoryBuild = baseUrl.replace(/\/$/, '').endsWith(`/${hash}`)
+  return !directoryBuild && route === hash
+}

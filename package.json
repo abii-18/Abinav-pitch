@@ -4,10 +4,11 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "node --experimental-strip-types scripts/run.mjs dev",
+    "build": "node --experimental-strip-types scripts/run.mjs build",
+    "build:all": "node --experimental-strip-types scripts/build-all.mjs",
     "preview": "vite preview",
-    "test": "node --experimental-strip-types --test src/routing.test.mjs"
+    "test": "node --experimental-strip-types --test src/routing.test.mjs scripts/build-support.test.mjs scripts/build-isolation.test.mjs scripts/build-all.test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.1.1",

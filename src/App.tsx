@@ -1,11 +1,10 @@
 import { useEffect, type ReactNode } from 'react'
 import { ArrowUpRight, ExternalLink, Globe, Mail } from 'lucide-react'
-import defaultConfig from './content/default.json'
-import walmartConfig from './content/walmart.json'
-import { getRoute, pitchHref, routeHash } from './routing'
+import selectedConfig from '@selected-pitch'
+import { acceptsPitchPath } from './routing'
 import type { PitchConfig } from './types'
 
-const configs: Record<string, PitchConfig> = { default: defaultConfig, walmart: walmartConfig }
+const pitch: PitchConfig = selectedConfig
 
 function SectionHeading({ children }: { children: ReactNode }) {
   return <div className="section-heading"><h2>{children}</h2></div>
@@ -20,9 +19,8 @@ function ContactIcon({ label }: { label: string }) {
 
 export default function App() {
   const baseUrl = import.meta.env.BASE_URL
-  const route = getRoute(window.location.pathname, baseUrl)
-  const isHome = route === ''
-  const config = isHome ? configs.default : Object.values(configs).find(item => routeHash(item.company) === route)
+  const isHome = pitch.slug === 'default'
+  const config = acceptsPitchPath(window.location.pathname, baseUrl, pitch.company) ? pitch : undefined
 
   useEffect(() => {
     document.title = !config ? 'Page not found | Abinav S' : isHome ? 'Abinav S | Data Engineer' : `Abinav S × ${config.company} | Data Engineer`
@@ -35,7 +33,7 @@ export default function App() {
   return <div className="site-shell">
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="topbar">
-      <a className="brand" href={isHome ? baseUrl : pitchHref(config.company, baseUrl)}>Abinav<span>.</span></a>
+      <a className="brand" href={baseUrl}>Abinav<span>.</span></a>
       <nav aria-label="Page sections">{navItems.map(([label, id]) => <a href={`#${id}`} key={id}>{label}</a>)}</nav>
     </header>
     <main id="main">
