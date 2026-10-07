@@ -9,7 +9,7 @@ Source: Abinav_S_Data_Engineer_Resume.pdf supplied by Abinav. This reference is 
 - Use Data Engineer for public role positioning; retain Associate Software Engineer — Data Engineering as the official employment title in this reference and in applications explicitly requiring it. This does not represent a formal title change.
 - Company pitches preserve this identity and tailor the emphasis to the JD.
 - Experience tags use clean technology names; the production paragraph and personal-project content establish scope. Tags do not establish production proficiency; Docker is internship evidence and Git is a listed skill.
-- Professional stack: Python, SQL, Apache Airflow, AWS Glue, Amazon Redshift, S3, Lambda, IAM and CloudWatch.
+- Professional stack: Python, SQL, PySpark, Apache Airflow, AWS Glue, Amazon Redshift, S3, Lambda, IAM and CloudWatch.
 - AI tools are productivity tools: Claude AI, Codex and Microsoft Copilot. Do not imply production AI-agent or model-training experience.
 
 ## Virtusa — client BMO
@@ -43,7 +43,7 @@ Source: Abinav_S_Data_Engineer_Resume.pdf supplied by Abinav. This reference is 
 - Bash, PySpark, Pandas, Databricks, PostgreSQL, Snowflake, dbt, Docker and Git.
 - AWS SNS, EC2, RDS and Athena.
 - ETL, batch processing, orchestration, warehousing and dimensional modeling.
-- Listing a tool does not prove professional deployment experience; PySpark/Snowflake/dbt have explicit personal-project evidence.
+- Listing a tool does not prove professional deployment experience; PySpark has both production and personal-project evidence; Snowflake/dbt have explicit personal-project evidence.
 
 ## Certifications and education
 - AWS Certified Data Engineer — Associate, 2024.
@@ -65,3 +65,8 @@ Source: Abinav_S_Data_Engineer_Resume.pdf supplied by Abinav. This reference is 
 - Distinguish professional work, internship, personal project and listed skills.
 - Include only supplied, verified links. Leave unsupported project links absent.
 - Do not commit the original PDF, phone number, client data, credentials or confidential implementation details.
+
+## User clarification for Walmart pitch
+- User confirms hands-on PySpark experience in the BMO production project at Virtusa alongside Python, SQL and AWS ETL. This supersedes the earlier resume-only interpretation of PySpark scope.
+- Specific window deduplication, schema enforcement, enrichment, rejects and idempotent Parquet techniques remain personal-project evidence; do not attribute them or the 25% validation metric specifically to production PySpark.
+- The Walmart config is prepared for applications after reaching 3 years from January 2024 (January 2027); the internship is excluded. This is future-use copy, not a claim of 3 completed years as of October 2026.

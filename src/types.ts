@@ -10,6 +10,7 @@ export type PitchConfig = {
   whyCompany: string[]
   canHelp: { title: string; body: string }[]
   evidence: { metric: string; label: string; detail: string }[]
+  projectIntro?: string
   projects: { title: string; description: string; tags: string[]; href?: string }[]
   about: string
   career: { company: string; role: string; dates: string; href?: string }[]
