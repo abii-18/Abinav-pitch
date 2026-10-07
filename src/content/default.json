@@ -1,0 +1,46 @@
+{
+  "slug": "default",
+  "company": "Your team",
+  "companyShort": "your team",
+  "role": "Data Engineer · Python, SQL & AWS",
+  "eyebrow": "Reliable data. Useful outcomes.",
+  "intro": "I’m Abinav, a data engineer building financial data pipelines at Virtusa for BMO. I work across ingestion, transformation, validation and orchestration, and keep those workflows dependable in production.",
+  "whyCompany": [
+    "Good data engineering makes downstream decisions easier to trust. I enjoy building the pipelines, checks and operational practices that make that possible.",
+    "My work connects development with production: understanding dependencies, delivering usable datasets and investigating failures through recovery. I’m looking to bring that approach to a team with meaningful data problems."
+  ],
+  "canHelp": [
+    { "title": "Build dependable batch pipelines", "body": "At Virtusa for BMO, I architected and maintained ETL pipelines processing 5M+ financial records daily with a 99.9% success rate. My work covers Python and SQL transformations, AWS ingestion and Airflow orchestration." },
+    { "title": "Improve warehouse performance and data quality", "body": "I designed layered Redshift models that improved query performance by 40%, tuned COPY loads for 3× faster performance versus row-level inserts, and built automated validation that reduced recurring issues by 25%." },
+    { "title": "Carry workflows through production recovery", "body": "Since June 2026, I’ve held offshore L3 ownership, leading support, incident triage and cross-team resolution. I investigate upstream dependencies, Glue and Redshift failures, data discrepancies and downstream impact, then execute controlled recovery." }
+  ],
+  "evidence": [
+    { "metric": "5M+", "label": "Financial records / day", "detail": "Batch ETL pipelines supporting critical downstream reporting with a 99.9% success rate." },
+    { "metric": "40%", "label": "Faster Redshift queries", "detail": "Layered raw-to-reporting data models with optimized distribution strategies." },
+    { "metric": "3×", "label": "Faster warehouse loads", "detail": "Tuned Redshift COPY parameters compared with row-level inserts on production pipelines." },
+    { "metric": "25%", "label": "Fewer recurring issues", "detail": "Automated checks for schema mismatches, date inconsistencies, missing columns and duplicates." },
+    { "metric": "150+", "label": "Daily production runs", "detail": "Airflow DAGs with business-day logic, conditional branching and task dependencies." },
+    { "metric": "500K+", "label": "Records in lakehouse project", "detail": "Incremental and full-load ingestion across six PostgreSQL entities in a personal project." }
+  ],
+  "projects": [
+    { "title": "Retail Sales Lakehouse", "description": "An end-to-end incremental batch pipeline: Airflow coordinates PostgreSQL and API ingestion, six parallel Bronze jobs, PySpark Silver transformations, Snowflake loading and dbt validation. Watermarks, partitioned Parquet, row-level rejects and dimensional models make processing repeatable and datasets easier to trust.", "tags": ["Airflow", "PySpark", "PostgreSQL", "Snowflake", "dbt", "Parquet"] }
+  ],
+  "about": "I’m an Associate Software Engineer in Data Engineering at Virtusa, working on BMO’s financial data platform since January 2024. My production experience centers on Python, SQL, Airflow, AWS Glue, S3 and Redshift. Since June 2026, I’ve also led offshore L3 support for platform stability and incident recovery.",
+  "career": [
+    { "company": "Virtusa · Client: BMO", "role": "Associate Software Engineer — Data Engineering", "dates": "Jan 2024 — Present" },
+    { "company": "Virtusa", "role": "Software Engineering Intern — Data Engineering", "dates": "Jan 2023 — Apr 2023" }
+  ],
+  "stack": ["Python", "SQL", "Apache Airflow", "AWS Glue", "Amazon Redshift", "S3", "Lambda", "CloudWatch"],
+  "links": [
+    { "label": "GitHub", "href": "https://github.com/abii-18" },
+    { "label": "LinkedIn", "href": "https://linkedin.com/in/abinav-s18" },
+    { "label": "Portfolio", "href": "https://abinavfolio.pages.dev" },
+    { "label": "Email", "href": "mailto:abinavv018@gmail.com" }
+  ],
+  "certifications": [
+    { "title": "AWS Certified Data Engineer — Associate", "year": "2024" },
+    { "title": "AWS Certified Solutions Architect — Associate", "year": "2023" },
+    { "title": "AWS Certified AI Practitioner", "year": "2025" }
+  ],
+  "education": { "institution": "Sri Ramakrishna Engineering College", "degree": "B.E. Computer Science", "date": "May 2023" }
+}
