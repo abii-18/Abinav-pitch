@@ -4,7 +4,7 @@
   "companyShort": "Walmart",
   "role": "Data Engineer · Python, SQL, PySpark, Spark & Cloud",
   "eyebrow": "Production experience. Built for dependable data.",
-  "intro": "I’m Abinav, a Data Engineer with 3 years of professional experience at Virtusa, working on BMO’s financial data platform. I genuinely enjoy building things, working with data, figuring out how things work and, more importantly, why they don’t 😅. I’d absolutely love to discuss what I can bring to your team and how I could contribute to Walmart as a whole.",
+  "intro": "I’m Abinav, a Data Engineer with 3 years of professional experience at Virtusa, working on BMO’s financial data platform. I genuinely enjoy building things, working with data, and getting to the bottom of why things break 😅. I’d absolutely love to discuss what I can bring to your team and how I could contribute to Walmart as a whole.",
   "whyCompany": [
     "Walmart’s data engineering roles connect large-scale pipelines to analytical datasets that business teams can trust. Their recurring focus on SQL, cloud warehouses, data quality, performance and distributed data processing matches the work I do in financial data engineering: delivering reporting data, managing dependencies and keeping batch workflows dependable.",
     "The opportunity to contribute to those problems at Walmart’s scale is what draws me here. I bring production Python, SQL, PySpark, Airflow and AWS experience, alongside hands-on Snowflake and dbt work in my personal Retail Sales Lakehouse. That gives me a concrete foundation for contributing to batch processing and analytical datasets while continuing to deepen my Spark expertise."
