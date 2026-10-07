@@ -7,6 +7,7 @@ export type PitchConfig = {
   role: string
   eyebrow: string
   intro: string
+  introFollowup?: string
   whyCompany: string[]
   canHelp: { title: string; body: string }[]
   evidence: { metric: string; label: string; detail: string }[]
