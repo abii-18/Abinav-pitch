@@ -3,7 +3,7 @@ import { test } from 'node:test'
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { assertChildPath, discoverConfigs, parseCompanyArgs, resolvePitchTarget, validateConfig } from './build-support.mjs'
+import { assertChildPath, discoverConfigs, parseCompanyArgs, resolvePitchTarget, validateConfig, writeCompanyLinks } from './build-support.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const template = JSON.parse(readFileSync(join(root, 'src/content/default.json'), 'utf8'))
@@ -31,6 +31,22 @@ test('discovery includes new JSON configs without a registry and ignores researc
 test('route collisions abort discovery before deployment', () => withFixture((dir, save) => {
   save('default', 'Your team'); save('first', 'Walmart'); save('second', 'WALMART')
   assert.throws(() => discoverConfigs(dir), /Route collision 822123/)
+}))
+
+test('local company links use discovered routes and remove deleted company entries', () => withFixture((dir, save) => {
+  save('default', 'Your team'); save('walmart', 'Walmart'); save('delhivery', 'Delhivery')
+  const targets = discoverConfigs(dir)
+  writeCompanyLinks(dir, targets)
+  const registry = readFileSync(join(dir, 'company-links.md'), 'utf8')
+  assert.ok(registry.startsWith('| Company | Pitch |\n|---|---|\n'))
+  assert.ok(!registry.includes('Your team'))
+  for (const target of targets.filter(target => target.slug !== 'default')) {
+    assert.ok(registry.includes(`| ${target.company} | https://abii-18.github.io/Abinav-pitch/${target.route}/ |`))
+  }
+  assert.equal(registry.trim().split('\n').length, 4)
+  rmSync(join(dir, 'delhivery.json'))
+  writeCompanyLinks(dir, discoverConfigs(dir))
+  assert.equal(readFileSync(join(dir, 'company-links.md'), 'utf8'), '| Company | Pitch |\n|---|---|\n| Walmart | https://abii-18.github.io/Abinav-pitch/822123/ |\n')
 }))
 
 test('missing default, invalid schema, mismatched slug and unsafe selection fail clearly', () => withFixture((dir, save) => {

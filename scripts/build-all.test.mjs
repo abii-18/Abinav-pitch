@@ -20,7 +20,7 @@ test('build:all assembles simultaneous routes, discovers additions and preserves
     }
     cpSync(join(root, 'src'), join(project, 'src'), { recursive: true })
     mkdirSync(join(project, 'scripts'))
-    for (const file of ['build-all.mjs', 'build-support.mjs', 'build-support.d.mts']) {
+    for (const file of ['build-all.mjs', 'build-support.mjs', 'build-support.d.mts', 'run.mjs']) {
       cpSync(join(root, 'scripts', file), join(project, 'scripts', file))
     }
     // Internal material must stay private even when present beside build inputs.
@@ -43,6 +43,13 @@ test('build:all assembles simultaneous routes, discovers additions and preserves
     assert.equal(result.status, 0, result.stdout + result.stderr)
     const targets = discoverConfigs(join(project, 'src/content'))
     assert.equal(targets.length, 4)
+    const registry = readFileSync(join(project, 'company-links.md'), 'utf8')
+    assert.equal(registry.trim().split('\n').length, 5)
+    assert.ok(!registry.includes('Your team'))
+    for (const target of targets.filter(target => target.slug !== 'default')) {
+      assert.ok(registry.includes(`| ${target.company} | https://abii-18.github.io/Abinav-pitch/${target.route}/ |`))
+      assert.ok(readFileSync(join(project, 'dist', target.route, 'index.html'), 'utf8'))
+    }
     const publicFiles = readdirSync(join(project, 'dist'), { recursive: true, withFileTypes: true })
       .filter(entry => !entry.isDirectory())
       .map(entry => join(entry.parentPath, entry.name).slice(join(project, 'dist').length + 1).replaceAll('\\', '/'))
@@ -93,6 +100,25 @@ test('build:all assembles simultaneous routes, discovers additions and preserves
     result = run()
     assert.notEqual(result.status, 0)
     assert.equal(readArtifact(join(project, 'dist/822123')), previous)
+    assert.equal(readFileSync(join(project, 'company-links.md'), 'utf8'), registry)
+    rmSync(join(project, 'src/content/broken.json'))
+    rmSync(join(project, 'src/content/mastercard.json'))
+    result = run()
+    assert.equal(result.status, 0, result.stdout + result.stderr)
+    const updatedRegistry = readFileSync(join(project, 'company-links.md'), 'utf8')
+    assert.ok(!updatedRegistry.includes('Mastercard'))
+    assert.ok(updatedRegistry.includes('| Amazon |') && updatedRegistry.includes('| Walmart |'))
+    assert.equal(updatedRegistry.trim().split('\n').length, 4)
+    // The normal single-company build must regenerate all production links too.
+    writeFileSync(join(project, 'company-links.md'), 'stale registry')
+    result = spawnSync(process.execPath, ['--experimental-strip-types', join(project, 'scripts/run.mjs'), 'build', '--company=walmart'], {
+      cwd: project, env: { ...process.env, GITHUB_ACTIONS: 'true' }, encoding: 'utf8', timeout: 30000,
+    })
+    assert.equal(result.status, 0, result.stdout + result.stderr)
+    assert.equal(readFileSync(join(project, 'company-links.md'), 'utf8'), updatedRegistry)
+    assert.ok(!readArtifact(join(project, 'dist')).includes('https://abii-18.github.io/Abinav-pitch/'))
+    const singleBuildFiles = readdirSync(join(project, 'dist'), { recursive: true })
+    assert.ok(!singleBuildFiles.some(path => path.replaceAll('\\', '/').endsWith('company-links.md')))
   } finally {
     assertChildPath(parent, project)
     rmSync(project, { recursive: true, force: true })

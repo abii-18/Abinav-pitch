@@ -4,7 +4,7 @@ import { createRequire } from 'node:module'
 import { cpSync, existsSync, lstatSync, mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { assertChildPath, discoverConfigs, verifyIsolation } from './build-support.mjs'
+import { assertChildPath, discoverConfigs, verifyIsolation, writeCompanyLinks } from './build-support.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
 const require = createRequire(import.meta.url)
@@ -67,6 +67,7 @@ try {
     throw error
   }
   published = true
+  writeCompanyLinks(root, targets)
   console.log(`Published local dist: generic root + ${targets.length} isolated opaque routes. No route manifest emitted.`)
 } finally {
   if (previousTarget === undefined) delete process.env.BUILD_TARGET

@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, realpathSync } from 'node:fs'
+import { readdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs'
 import { basename, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path'
 import { routeHash } from '../src/routing.ts'
 
@@ -53,6 +53,14 @@ export function discoverConfigs(directory) {
     routes.set(target.route, target.slug)
   }
   return targets
+}
+
+export function writeCompanyLinks(root, targets) {
+  const rows = targets.filter(target => target.slug !== 'default').map(target => {
+    const company = target.company.replaceAll('\\', '\\\\').replaceAll('|', '\\|').replace(/[\r\n]+/g, ' ')
+    return `| ${company} | https://abii-18.github.io/Abinav-pitch/${target.route}/ |`
+  })
+  writeFileSync(join(root, 'company-links.md'), ['| Company | Pitch |', '|---|---|', ...rows, ''].join('\n'))
 }
 
 export function parseCompanyArgs(args, fallback = 'default') {
