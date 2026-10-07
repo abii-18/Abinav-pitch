@@ -25,6 +25,8 @@ Routing tests cover local and GitHub Pages base paths, targeted links, trailing 
 ## Content
 
 - `src/content/default.json`: homepage and default pitch content.
+- `src/content/walmart.json`: Walmart pitch, with production and personal-project evidence distinguished.
+- `docs/walmart-research.md`: sources, requirement synthesis and claim boundaries.
 - `src/types.ts`: shared content schema; project links are optional.
 - `src/content/resume-reference.md`: professional facts and tailoring constraints, not rendered on the website.
 - `.codex/skills/generate-pitch-json/SKILL.md`: guidance for future company pitches.
@@ -58,3 +60,16 @@ GitHub Actions builds use `/Abinav-pitch/`; local builds use `/`. Brand and reco
 ## Attribution
 
 The starting structure, visual design and config-driven pitch approach come from [venkxycodes/pitch-desk](https://github.com/venkxycodes/pitch-desk), reviewed at commit `e910399c16694217f8f9acffafb10f9d67e11f59`. Abinav’s content comes from his supplied resume. Upstream contains no license file; this repository does not add or imply a new license for upstream code.
+
+## Walmart pitch
+
+The shared `routeHash("Walmart")` produces `822123`; links use `pitchHref("Walmart", baseUrl)`.
+
+- Local development: `http://localhost:5173/822123`
+- GitHub Pages: `https://abii-18.github.io/Abinav-pitch/822123`
+- A trailing slash is accepted; nested paths show the recovery page.
+- Root and the existing default pitch (`312011`) retain their behavior.
+
+Four contribution cards use the shared two-column variant (one column on mobile). The existing three-card default remains unchanged. Experience tags use clean technology names; production scope is explicit in the Experience paragraph and personal-project scope remains explicit in the contribution and project content. No project URL is fabricated.
+
+For a deployment-base check locally, build with `GITHUB_ACTIONS=true`, copy `dist/index.html` to `dist/404.html` as the existing workflow does, and preview the result. The Pages fallback renders direct pitch links while retaining an HTTP 404 status. Local Vite preview alone does not reproduce that HTTP status.

@@ -4,7 +4,11 @@ Source: Abinav_S_Data_Engineer_Resume.pdf supplied by Abinav. This reference is 
 
 ## Positioning
 - Abinav S; GitHub abii-18.
-- Data engineer with production batch ETL and financial data experience.
+- Default portfolio positioning: Data Engineer building scalable production data systems.
+- Preferred baseline: “I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa.”
+- Use Data Engineer for public role positioning; retain Associate Software Engineer — Data Engineering as the official employment title in this reference and in applications explicitly requiring it. This does not represent a formal title change.
+- Company pitches preserve this identity and tailor the emphasis to the JD.
+- Experience tags use clean technology names; the production paragraph and personal-project content establish scope. Tags do not establish production proficiency; Docker is internship evidence and Git is a listed skill.
 - Professional stack: Python, SQL, Apache Airflow, AWS Glue, Amazon Redshift, S3, Lambda, IAM and CloudWatch.
 - AI tools are productivity tools: Claude AI, Codex and Microsoft Copilot. Do not imply production AI-agent or model-training experience.
 
