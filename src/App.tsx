@@ -1,10 +1,11 @@
 import { useEffect, type ReactNode } from 'react'
 import { ArrowUpRight, ExternalLink, Globe, Mail } from 'lucide-react'
 import defaultConfig from './content/default.json'
+import walmartConfig from './content/walmart.json'
 import { getRoute, pitchHref, routeHash } from './routing'
 import type { PitchConfig } from './types'
 
-const configs: Record<string, PitchConfig> = { default: defaultConfig }
+const configs: Record<string, PitchConfig> = { default: defaultConfig, walmart: walmartConfig }
 
 function SectionHeading({ children }: { children: ReactNode }) {
   return <div className="section-heading"><h2>{children}</h2></div>
@@ -39,9 +40,9 @@ export default function App() {
     </header>
     <main id="main">
       <section className="hero"><div className="kicker"><span className="live-dot" />{config.eyebrow}</div><p className="hero-pretitle">{isHome ? 'Hello, I’m Abinav.' : `Hello, ${config.companyShort ?? config.company}.`}</p><h1>{isHome ? <>Build data systems.<br /><em>Make them dependable.</em></> : <>Let’s build<br /><em>reliable data together.</em></>}</h1><p className="hero-copy">{config.intro}</p><div className="hero-meta"><span>{config.role}</span></div></section>
-      <section id="about" className="section about-section"><SectionHeading>Experience</SectionHeading><div className="about-grid"><div><p className="about-copy">{config.about}</p><div className="stack" aria-label="Production technologies">{config.stack.map(item => <span key={item}>{item}</span>)}</div></div><div className="career">{config.career.map(item => <div className="career-row" key={`${item.company}-${item.dates}`}><div>{item.href ? <a href={item.href} target="_blank" rel="noreferrer"><strong>{item.company} <ExternalLink size={12} /></strong></a> : <strong>{item.company}</strong>}<span>{item.role}</span></div><span className="career-dates">{item.dates}</span></div>)}</div></div></section>
+      <section id="about" className="section about-section"><SectionHeading>Experience</SectionHeading><div className="about-grid"><div><p className="about-copy">{config.about}</p><div className="stack" aria-label="Technologies and experience">{config.stack.map(item => <span key={item}>{item}</span>)}</div></div><div className="career">{config.career.map(item => <div className="career-row" key={`${item.company}-${item.dates}`}><div>{item.href ? <a href={item.href} target="_blank" rel="noreferrer"><strong>{item.company} <ExternalLink size={12} /></strong></a> : <strong>{item.company}</strong>}<span>{item.role}</span></div><span className="career-dates">{item.dates}</span></div>)}</div></div></section>
       <section id="why" className="section"><SectionHeading>{isHome ? 'How I approach data engineering' : `Why ${config.company}`}</SectionHeading><div className="prose">{config.whyCompany.map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div></section>
-      <section id="help" className="section"><SectionHeading>Where I could contribute</SectionHeading><div className="help-grid">{config.canHelp.map(item => <article className="help-card" key={item.title}><h3>{item.title}</h3><p>{item.body}</p></article>)}</div></section>
+      <section id="help" className="section"><SectionHeading>Where I could contribute</SectionHeading><div className={`help-grid${config.canHelp.length === 4 ? ' help-grid-four' : ''}`}>{config.canHelp.map(item => <article className="help-card" key={item.title}><h3>{item.title}</h3><p>{item.body}</p></article>)}</div></section>
       <section id="evidence" className="section"><SectionHeading>Key achievements</SectionHeading><div className="evidence-grid">{config.evidence.map(item => <article className="evidence-card" key={item.label}><strong>{item.metric}</strong><span>{item.label}</span><p>{item.detail}</p></article>)}</div></section>
       <section id="build" className="section"><SectionHeading>What I’ve built</SectionHeading><p className="section-lead">A personal project applying the same focus on dependable workflows, data quality and useful downstream models.</p><div className="project-list">{config.projects.map(project => {
         const content = <><div><h3>{project.title} {project.href && <ExternalLink size={14} aria-hidden="true" />}</h3><p>{project.description}</p><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div>{project.href && <ArrowUpRight className="arrow" size={20} aria-hidden="true" />}</>

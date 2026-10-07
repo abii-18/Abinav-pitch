@@ -1,0 +1,141 @@
+{
+  "slug": "walmart",
+  "company": "Walmart",
+  "companyShort": "Walmart",
+  "role": "Data Engineer · Python, SQL, Spark & Cloud",
+  "eyebrow": "Production experience. Built for dependable data.",
+  "intro": "I’m Abinav, a data engineer with 2.5+ years of professional experience at Virtusa for BMO. I build Python and SQL batch pipelines processing 5M+ financial records daily with a 99.9% success rate, using Airflow and AWS to deliver reliable reporting data and improve warehouse performance.",
+  "whyCompany": [
+    "Walmart’s data engineering roles connect large-scale pipelines to analytical datasets that business teams can trust. Their recurring focus on SQL, cloud warehouses, data quality and performance matches the work I do in financial data engineering: delivering reporting data, managing dependencies and keeping batch workflows dependable.",
+    "The opportunity to contribute to those problems at Walmart’s scale is what draws me here. I bring production Python, SQL, Airflow and AWS experience, alongside hands-on PySpark, Snowflake and dbt work in my personal Retail Sales Lakehouse. That gives me a concrete foundation for contributing to batch processing and analytical models while developing deeper Spark expertise."
+  ],
+  "canHelp": [
+    {
+      "title": "Scalable batch pipelines",
+      "body": "Walmart’s pipeline roles need repeatable ingestion and dependable downstream delivery. At Virtusa for BMO, I built and maintained Python/SQL ETL using Glue, S3 and Airflow, including incremental loads and dependencies across 150+ daily production runs. I would bring that experience to batch workflows serving analytical datasets."
+    },
+    {
+      "title": "PySpark processing · Personal project",
+      "body": "Walmart’s Spark-focused roles turn raw data into usable analytical datasets. In my personal lakehouse, I used PySpark for window-based deduplication, schema enforcement, enrichment and row-level rejects, with partitioned Parquet and idempotent batch processing. This is hands-on project evidence, separate from my production AWS work."
+    },
+    {
+      "title": "Data quality and production recovery",
+      "body": "Reliable datasets require checks and a clear recovery path. My automated schema, date, missing-column and duplicate validation reduced recurring issues by 25%. I also use CloudWatch, investigate upstream and Glue/Redshift failures, and execute controlled reruns; since June 2026, I’ve held offshore L3 support ownership."
+    },
+    {
+      "title": "Warehouse performance and useful models",
+      "body": "Walmart’s warehouse roles emphasize efficient queries and analytics-ready models. My layered Redshift raw-to-reporting models delivered 40% faster queries, and tuned COPY loads were 3× faster than row-level inserts. Separately, my personal project uses dbt dimensions, facts and tests to create trustworthy analytical datasets."
+    }
+  ],
+  "evidence": [
+    {
+      "metric": "5M+",
+      "label": "Financial records / day",
+      "detail": "Production batch ETL delivering financial data for critical downstream reporting."
+    },
+    {
+      "metric": "40%",
+      "label": "Faster Redshift queries",
+      "detail": "Layered raw-to-reporting data models with optimized distribution strategies."
+    },
+    {
+      "metric": "3×",
+      "label": "Faster warehouse loads",
+      "detail": "Tuned Redshift COPY parameters compared with row-level inserts on production pipelines."
+    },
+    {
+      "metric": "25%",
+      "label": "Fewer recurring issues",
+      "detail": "Automated checks for schema mismatches, date inconsistencies, missing columns and duplicates."
+    },
+    {
+      "metric": "150+",
+      "label": "Daily production runs",
+      "detail": "Airflow DAGs with business-day logic, conditional branching and task dependencies."
+    },
+    {
+      "metric": "99.9%",
+      "label": "Pipeline success rate",
+      "detail": "Success rate for production batch ETL supporting critical downstream financial reporting."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Retail Sales Lakehouse",
+      "description": "A personal batch lakehouse processing 500K+ records across six PostgreSQL entities, plus API ingestion. Airflow coordinates six parallel Bronze jobs and PySpark Silver transformations with window-based deduplication, schema enforcement, FX enrichment and row-level rejects. Transactional watermarks support incremental loads; batch-date partitioned Parquet and runtime parameters make processing repeatable and idempotent. Snowflake stages and COPY INTO feed dbt staging, dimensions, facts and analytical models, validated with unique, not-null and relationship tests.",
+      "tags": [
+        "PostgreSQL",
+        "Airflow",
+        "PySpark",
+        "Parquet",
+        "Snowflake",
+        "dbt"
+      ]
+    }
+  ],
+  "about": "I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa. I design production ETL workflows using Python, SQL, Airflow, AWS Glue, S3, and Redshift, processing 5M+ financial records daily. My work focuses on reliable ingestion, data quality, warehouse performance, and production recovery.",
+  "career": [
+    {
+      "company": "Virtusa · BMO",
+      "role": "Data Engineer",
+      "dates": "Jan 2024 — Present"
+    },
+    {
+      "company": "Virtusa",
+      "role": "Software Engineering Intern — Data Engineering",
+      "dates": "Jan 2023 — Apr 2023"
+    }
+  ],
+  "stack": [
+    "Python",
+    "SQL",
+    "PySpark",
+    "Apache Airflow",
+    "AWS Glue",
+    "Amazon Redshift",
+    "S3",
+    "Lambda",
+    "CloudWatch",
+    "Snowflake",
+    "dbt",
+    "Docker",
+    "Git"
+  ],
+  "links": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/abii-18"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/abinav-s18"
+    },
+    {
+      "label": "Portfolio",
+      "href": "https://abinavfolio.pages.dev"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:abinavv018@gmail.com"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Data Engineer — Associate",
+      "year": "2024"
+    },
+    {
+      "title": "AWS Certified Solutions Architect — Associate",
+      "year": "2023"
+    },
+    {
+      "title": "AWS Certified AI Practitioner",
+      "year": "2025"
+    }
+  ],
+  "education": {
+    "institution": "Sri Ramakrishna Engineering College",
+    "degree": "B.E. Computer Science",
+    "date": "May 2023"
+  }
+}

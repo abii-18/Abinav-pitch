@@ -25,12 +25,12 @@
   "projects": [
     { "title": "Retail Sales Lakehouse", "description": "An end-to-end incremental batch pipeline: Airflow coordinates PostgreSQL and API ingestion, six parallel Bronze jobs, PySpark Silver transformations, Snowflake loading and dbt validation. Watermarks, partitioned Parquet, row-level rejects and dimensional models make processing repeatable and datasets easier to trust.", "tags": ["Airflow", "PySpark", "PostgreSQL", "Snowflake", "dbt", "Parquet"] }
   ],
-  "about": "I’m an Associate Software Engineer in Data Engineering at Virtusa, working on BMO’s financial data platform since January 2024. My production experience centers on Python, SQL, Airflow, AWS Glue, S3 and Redshift. Since June 2026, I’ve also led offshore L3 support for platform stability and incident recovery.",
+  "about": "I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa. I design production ETL workflows using Python, SQL, Airflow, AWS Glue, S3, and Redshift, processing 5M+ financial records daily. My work focuses on reliable ingestion, data quality, warehouse performance, and production recovery.",
   "career": [
-    { "company": "Virtusa · Client: BMO", "role": "Associate Software Engineer — Data Engineering", "dates": "Jan 2024 — Present" },
+    { "company": "Virtusa · BMO", "role": "Data Engineer", "dates": "Jan 2024 — Present" },
     { "company": "Virtusa", "role": "Software Engineering Intern — Data Engineering", "dates": "Jan 2023 — Apr 2023" }
   ],
-  "stack": ["Python", "SQL", "Apache Airflow", "AWS Glue", "Amazon Redshift", "S3", "Lambda", "CloudWatch"],
+  "stack": ["Python", "SQL", "PySpark", "Apache Airflow", "AWS Glue", "Amazon Redshift", "S3", "Lambda", "CloudWatch", "Snowflake", "dbt", "Docker", "Git"],
   "links": [
     { "label": "GitHub", "href": "https://github.com/abii-18" },
     { "label": "LinkedIn", "href": "https://linkedin.com/in/abinav-s18" },

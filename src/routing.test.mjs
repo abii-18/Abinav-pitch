@@ -22,3 +22,20 @@ test('local routes and hashes remain stable and company-specific', () => {
   assert.equal(routeHash('Your team'), routeHash('YOUR TEAM'))
   assert.notEqual(routeHash('Your team'), routeHash('Another company'))
 })
+
+
+test('Walmart and default links remain deterministic on local and Pages routes', () => {
+  assert.equal(routeHash('Walmart'), '822123')
+  assert.equal(routeHash('Your team'), '312011')
+  assert.equal(routeHash('Walmart'), routeHash('WALMART'))
+  assert.match(routeHash('Walmart'), /^\d{6}$/)
+  assert.notEqual(routeHash('Walmart'), routeHash('Your team'))
+  for (const base of ['/', '/Abinav-pitch/']) {
+    const walmart = pitchHref('Walmart', base)
+    assert.equal(getRoute(base, base), '')
+    assert.equal(getRoute(walmart, base), routeHash('Walmart'))
+    assert.equal(getRoute(`${walmart}/`, base), routeHash('Walmart'))
+    assert.equal(getRoute(`${walmart}/extra`, base), null)
+    assert.equal(getRoute(pitchHref('Your team', base), base), routeHash('Your team'))
+  }
+})

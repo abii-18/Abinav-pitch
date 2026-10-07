@@ -7,6 +7,8 @@ description: Tailor an Abinav pitch-desk company config from a supplied job desc
 
 Read src/types.ts, src/content/default.json, src/content/resume-reference.md and any existing company config first.
 
+Default to “Data Engineer building scalable production data systems.” Use the baseline “I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa.” Preserve this identity when tailoring company emphasis. Display Data Engineer as portfolio positioning, not as a formal title change; use the official Associate Software Engineer title only when an application explicitly requires it. Experience technology tags use clean names without project/internship/skill suffixes. Keep production, internship and personal-project scope clear in the copy and project evidence; never infer production use from a tag.
+
 Identify what the company builds, its data/engineering problems and the strongest relevant evidence from Abinav’s resume. Map company problem -> verified experience -> useful contribution. Write concise, concrete copy without generic enthusiasm or keyword lists.
 
 Preserve the PitchConfig schema. Use the default as a shape reference, not as company-specific copy. Select relevant metrics rather than forcing every metric into every pitch. Use three distinct contributions with evidence. Optional certifications and education may be retained. Project href is optional: never invent a URL.
