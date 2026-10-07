@@ -2,25 +2,25 @@
   "slug": "walmart",
   "company": "Walmart",
   "companyShort": "Walmart",
-  "role": "Data Engineer · Python, SQL, Spark & Cloud",
+  "role": "Data Engineer · Python, SQL, PySpark, Spark & Cloud",
   "eyebrow": "Production experience. Built for dependable data.",
-  "intro": "I’m Abinav, a data engineer with 2.5+ years of professional experience at Virtusa for BMO. I build Python and SQL batch pipelines processing 5M+ financial records daily with a 99.9% success rate, using Airflow and AWS to deliver reliable reporting data and improve warehouse performance.",
+  "intro": "I’m Abinav, a data engineer with 3 years of professional experience at Virtusa for BMO. I build Python, SQL and PySpark batch pipelines processing 5M+ financial records daily with a 99.9% success rate, using Airflow and AWS to deliver reliable reporting data and improve warehouse performance.",
   "whyCompany": [
-    "Walmart’s data engineering roles connect large-scale pipelines to analytical datasets that business teams can trust. Their recurring focus on SQL, cloud warehouses, data quality and performance matches the work I do in financial data engineering: delivering reporting data, managing dependencies and keeping batch workflows dependable.",
-    "The opportunity to contribute to those problems at Walmart’s scale is what draws me here. I bring production Python, SQL, Airflow and AWS experience, alongside hands-on PySpark, Snowflake and dbt work in my personal Retail Sales Lakehouse. That gives me a concrete foundation for contributing to batch processing and analytical models while developing deeper Spark expertise."
+    "Walmart’s data engineering roles connect large-scale pipelines to analytical datasets that business teams can trust. Their recurring focus on SQL, cloud warehouses, data quality, performance and distributed data processing matches the work I do in financial data engineering: delivering reporting data, managing dependencies and keeping batch workflows dependable.",
+    "The opportunity to contribute to those problems at Walmart’s scale is what draws me here. I bring production Python, SQL, PySpark, Airflow and AWS experience, alongside hands-on Snowflake and dbt work in my personal Retail Sales Lakehouse. That gives me a concrete foundation for contributing to batch processing and analytical datasets while continuing to deepen my Spark expertise."
   ],
   "canHelp": [
     {
       "title": "Scalable batch pipelines",
-      "body": "Walmart’s pipeline roles need repeatable ingestion and dependable downstream delivery. At Virtusa for BMO, I built and maintained Python/SQL ETL using Glue, S3 and Airflow, including incremental loads and dependencies across 150+ daily production runs. I would bring that experience to batch workflows serving analytical datasets."
+      "body": "Walmart’s pipeline roles need repeatable ingestion and dependable downstream delivery. At Virtusa for BMO, I built and maintained Python, SQL and PySpark ETL using Glue, S3 and Airflow, including incremental loads and dependencies across 150+ daily production runs. I would bring that experience to batch workflows serving analytical datasets."
     },
     {
-      "title": "PySpark processing · Personal project",
-      "body": "Walmart’s Spark-focused roles turn raw data into usable analytical datasets. In my personal lakehouse, I used PySpark for window-based deduplication, schema enforcement, enrichment and row-level rejects, with partitioned Parquet and idempotent batch processing. This is hands-on project evidence, separate from my production AWS work."
+      "title": "PySpark processing · Production + personal project",
+      "body": "PySpark is part of my hands-on data engineering experience at BMO, where I have worked with PySpark alongside Python, SQL and AWS-based ETL workflows in an enterprise financial data environment. I have also gone deeper independently through my Retail Sales Lakehouse, where I used PySpark for window-based deduplication, schema enforcement, enrichment and row-level rejects, with partitioned Parquet and idempotent batch processing."
     },
     {
       "title": "Data quality and production recovery",
-      "body": "Reliable datasets require checks and a clear recovery path. My automated schema, date, missing-column and duplicate validation reduced recurring issues by 25%. I also use CloudWatch, investigate upstream and Glue/Redshift failures, and execute controlled reruns; since June 2026, I’ve held offshore L3 support ownership."
+      "body": "Reliable datasets require checks and a clear recovery path. My automated validation for schema mismatches, date inconsistencies, missing columns and duplicates reduced recurring issues by 25%. I also use CloudWatch, investigate upstream and Glue/Redshift failures, and execute controlled reruns; since June 2026, I’ve held offshore L3 support ownership."
     },
     {
       "title": "Warehouse performance and useful models",
@@ -73,7 +73,7 @@
       ]
     }
   ],
-  "about": "I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa. I design production ETL workflows using Python, SQL, Airflow, AWS Glue, S3, and Redshift, processing 5M+ financial records daily. My work focuses on reliable ingestion, data quality, warehouse performance, and production recovery.",
+  "about": "I’m a Data Engineer building scalable data pipelines and warehouse workflows for BMO’s financial data platform at Virtusa. I design and support production ETL workflows using Python, SQL, PySpark, Airflow, AWS Glue, S3, and Redshift, processing 5M+ financial records daily. My work focuses on reliable ingestion, data processing, data quality, warehouse performance, and production recovery.",
   "career": [
     {
       "company": "Virtusa · BMO",
@@ -137,5 +137,6 @@
     "institution": "Sri Ramakrishna Engineering College",
     "degree": "B.E. Computer Science",
     "date": "May 2023"
-  }
+  },
+  "projectIntro": "A personal project extending my production data engineering experience into a complete batch lakehouse, with deeper hands-on PySpark processing, data quality and analytical modeling."
 }
