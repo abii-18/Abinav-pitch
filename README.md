@@ -1,6 +1,6 @@
 # Abinav Pitch Desk
 
-A config-driven data engineering portfolio and company-specific pitch site for **Abinav S**. Built with React, TypeScript and Vite, with a restrained dark-and-gold layout adapted from [venkxycodes/pitch-desk](https://github.com/venkxycodes/pitch-desk).
+A config-driven data engineering portfolio and company-specific pitch site for **Abinav S**. Built with React, TypeScript and Vite, with a restrained dark-and-gold layout 
 
 ## Run locally
 
